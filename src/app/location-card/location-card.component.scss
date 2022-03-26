@@ -1,0 +1,34 @@
+@import "../../scss/variables.scss";
+@import "../../scss/mixins.scss";
+
+// Cards
+.card {
+  display: grid;
+  grid-template:
+    "img title" min-content
+    "img content" auto / 1fr 3fr;
+  grid-column-gap: 1.5em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+  padding: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.card-img {
+  grid-area: img;
+  max-width: 100%;
+}
+
+.card-title {
+  grid-area: title;
+  margin: 0;
+  font-weight: 300;
+}
+
+.card-content {
+  grid-area: content;
+
+  a {
+    color: $yellow;
+    font-size: 1.1em;
+  }
+}

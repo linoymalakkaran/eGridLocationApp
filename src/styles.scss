@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+// Google font
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,900|Six+Caps");
+@import "./scss/variables.scss";
+@import "./scss/mixins.scss";
+
+app-root {
+  @include font-base;
+  line-height: 1.6;
+
+  display: grid;
+  grid-template:
+    "header header header header" 3em
+    "hero hero hero hero" 50vh
+    "main main main sidebar" auto
+    "footer footer footer footer" 3em
+    / 1fr minmax(30em, 5fr) minmax(15em, 2fr) 1fr;
+  grid-column-gap: 1.5em;
+}
