@@ -22,5 +22,5 @@ export interface IEgridModel {
   NUMGEN?: string;
   PLPRMFL?: string;
   PLFUELCT?: string;
-  PLNGENAN?: string;
+  PLNGENAN: string;
 }

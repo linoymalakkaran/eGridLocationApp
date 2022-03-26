@@ -34,7 +34,7 @@ main {
   grid-area: main;
 }
 
-app-location-card {
+.app-location-card-main {
   display: grid;
   // grid-template-columns: 1fr 1fr 1fr;
   grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));

@@ -8,7 +8,11 @@
 
 <main>
   <h1>Top 10 annual net generation of power plants.</h1>
-  <app-location-card></app-location-card>
+  <div class="app-location-card-main">
+    <ng-container *ngFor="let locData of topTenPowerPlants">
+      <app-location-card [locData]="locData"></app-location-card>
+    </ng-container>
+  </div>
 </main>
 
 <aside>

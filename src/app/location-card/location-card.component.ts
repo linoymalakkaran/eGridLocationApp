@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IEgridModel } from '../models/IEgrid.interface';
 
 @Component({
   selector: 'app-location-card',
   templateUrl: './location-card.component.html',
-  styleUrls: ['./location-card.component.scss']
+  styleUrls: ['./location-card.component.scss'],
 })
 export class LocationCardComponent implements OnInit {
+  @Input()
+  locData!: Partial<IEgridModel>;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
