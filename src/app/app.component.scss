@@ -21,13 +21,19 @@ footer {
   @include font-alt($color: $yellow, $font-size: $fs-base-2);
 }
 
-.hero {
-  grid-area: hero;
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/gridarea-hero-bg.jpg);
+.map-area {
+  grid-area: map-area;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+app-location-map {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 main {
@@ -37,7 +43,7 @@ main {
 .app-location-card-main {
   display: grid;
   // grid-template-columns: 1fr 1fr 1fr;
-  grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
   grid-column-gap: 1.5em;
 }
 

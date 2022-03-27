@@ -1,0 +1,8 @@
+@import "../../scss/variables.scss";
+@import "../../scss/mixins.scss";
+
+.map-canvas-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}

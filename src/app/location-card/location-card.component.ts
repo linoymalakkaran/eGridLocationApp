@@ -13,4 +13,9 @@ export class LocationCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+
+  mapMoveToPoint($event: MouseEvent) {
+    App.mapMoveToPoint($event);
+  }
 }

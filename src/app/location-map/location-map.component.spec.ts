@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LocationSearchComponent } from './location-search.component';
+import { LocationMapComponent } from './location-map.component';
 
 describe('LocationSearchComponent', () => {
-  let component: LocationSearchComponent;
-  let fixture: ComponentFixture<LocationSearchComponent>;
+  let component: LocationMapComponent;
+  let fixture: ComponentFixture<LocationMapComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LocationSearchComponent ]
+      declarations: [ LocationMapComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LocationSearchComponent);
+    fixture = TestBed.createComponent(LocationMapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

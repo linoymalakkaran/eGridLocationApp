@@ -11,7 +11,7 @@ app-root {
   display: grid;
   grid-template:
     "header header header header" 3em
-    "hero hero hero hero" 50vh
+    "map-area map-area map-area map-area" 60vh
     "main main main sidebar" auto
     "footer footer footer footer" 3em
     / 1fr minmax(30em, 5fr) minmax(15em, 2fr) 1fr;

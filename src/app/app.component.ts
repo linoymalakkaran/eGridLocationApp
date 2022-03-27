@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  defaultIApiResponse,
-  IApiResponse,
-} from './models/IApiResponse.interface';
 import { IEgridModel } from './models/IEgrid.interface';
 import { IScriptsModel } from './models/IScripts-model';
 import { EGridDataService } from './services/egrid-data.service';
 import { ScriptLoaderService } from './services/script-loader.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-root',
@@ -61,5 +58,24 @@ export class AppComponent implements OnInit {
         return parseFloat(itemA.PLNGENAN) - parseFloat(itemB.PLNGENAN);
       })
       .slice(0, 10);
+    this.initializeGoogleMap(this.topTenPowerPlants);
+  }
+
+  initializeGoogleMap(markers: any) {
+    App.globals.MapPoints = markers;
+    var latlng = new google.maps.LatLng(62.6833, -164.6544); // default location
+    var myOptions = {
+      zoom: 11,
+      center: latlng,
+      disableDefaultUI: true,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+    };
+    App.globals.locationMap = new google.maps.Map(
+      document.getElementById('map_canvas'),
+      myOptions
+    );
+    App.createMarkers();
+    App.globals.locationMap.setCenter(latlng);
+    App.globals.locationMap.setZoom(3);
   }
 }

@@ -6,7 +6,7 @@
   display: grid;
   grid-template:
     "img title" min-content
-    "img content" auto / 1fr 3fr;
+    "img content" auto / 3fr 4.5fr;
   grid-column-gap: 1.5em;
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
   padding: 1.5em;
@@ -15,7 +15,17 @@
 
 .card-img {
   grid-area: img;
+  color: #ab780a;
   max-width: 100%;
+  a {
+    color: $yellow;
+    font-size: 1.1em;
+  }
+  .data-val {
+    font-size: 1.1em;
+    font-style: italic;
+    color: $yellow;
+  }
 }
 
 .card-title {
@@ -26,9 +36,14 @@
 
 .card-content {
   grid-area: content;
-
+  color: #5a4c4c;
   a {
     color: $yellow;
     font-size: 1.1em;
+  }
+  .data-val {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #000;
   }
 }
