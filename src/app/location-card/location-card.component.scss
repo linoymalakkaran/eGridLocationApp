@@ -20,11 +20,15 @@
   a {
     color: $yellow;
     font-size: 1.1em;
+    text-decoration: none;
   }
   .data-val {
     font-size: 1.1em;
     font-style: italic;
     color: $yellow;
+  }
+  .map-locator-img {
+    cursor: pointer;
   }
 }
 

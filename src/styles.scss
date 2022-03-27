@@ -4,6 +4,12 @@
 @import "./scss/variables.scss";
 @import "./scss/mixins.scss";
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 app-root {
   @include font-base;
   line-height: 1.6;
@@ -16,4 +22,22 @@ app-root {
     "footer footer footer footer" 3em
     / 1fr minmax(30em, 5fr) minmax(15em, 2fr) 1fr;
   grid-column-gap: 1.5em;
+}
+
+.abs-position {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.button-reset {
+  background-color: #e8e8e8;
+  border: none;
+  color: #0c0202;
+  padding: 10px 23px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
 }

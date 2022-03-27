@@ -1,20 +1,24 @@
 <div class="card">
   <div class="card-img">
-    <img
+    <!-- <img
       (click)="mapMoveToPoint($event)"
-      class="viewallmap"
       src="assets/images/ico_map.png"
       alt=""
-    />
+    /> -->
+    <div>
+      <img
+        (click)="mapMoveToPoint($event)"
+        src="assets/images/ico_map.png"
+        class="map-locator-img"
+        alt=""
+      />
+      <a href="javascript:void(0)" (click)="mapMoveToPoint($event)"
+        >Go to Map</a
+      >
+    </div>
     <div>Latitude: {{ locData.LAT }}</div>
     <div>Longitude: {{ locData.LON }}</div>
     <div>No. units: {{ locData.NUMUNT }}</div>
-    <a
-      href="javascript:void(0)"
-      (click)="mapMoveToPoint($event)"
-      class="viewallmap"
-      >Go to Map</a
-    >
     <hr />
     <div>
       Balancing Authority Code:

@@ -49,16 +49,10 @@ App.createMarkers = function () {
 };
 
 App.triggerMarker = function (marker) {
-  var points = App.globals.MapPoints;
+  const points = App.globals.MapPoints;
   //close all other boxes
-  for (var i = 0; i < points.length; i++) {
-    try {
-      var a = points[i].marker;
-    } catch (e) {
-      continue;
-    }
-
-    points[i].marker.infowindow.close();
+  for (let i = 0; i < points.length; i++) {
+    points[i].marker?.infowindow.close();
   }
   marker.infowindow.open(App.globals.locationMap, marker);
   App.globals.locationMap.setCenter(marker.getPosition());
@@ -66,7 +60,6 @@ App.triggerMarker = function (marker) {
 };
 
 App.mapMoveToPoint = function (locData) {
-  //const points = App.globals.MapPoints;
   const locationObj = App.globals.MapPoints.filter((loc) => {
     return loc.SEQPLT20 === locData.SEQPLT20;
   })[0];
@@ -82,24 +75,4 @@ App.mapMoveToPoint = function (locData) {
     css: { top: "50px", left: ($(window).width() - 10) / 2 + "px" },
   });
   $(parent.document).scrollTop(0);
-};
-
-App.mapMoveToPointDropdown = function (el) {
-  var pid = $(el).val();
-
-  var points = App.globals.MapPoints;
-  var pt;
-  //find relevant point
-  for (var i = 0; i < points.length; i++) {
-    if (points[i].code == pid) {
-      pt = points[i];
-    }
-  }
-  if (!pt || pt == undefined) return false;
-  $("html, body").animate({ scrollTop: "10px" }, 1000, function () {
-    //App.globals.locationMap.setCenter(newPoint);
-    App.triggerMarker(pt.marker);
-
-    $(".custom_locations").val(pid);
-  });
 };

@@ -9,6 +9,7 @@ header {
 
 header,
 footer {
+  position: relative;
   background: $black;
   color: $yellow;
   display: flex;
@@ -16,7 +17,6 @@ footer {
   align-items: center;
 }
 
-.header-title,
 .footer-title {
   @include font-alt($color: $yellow, $font-size: $fs-base-2);
 }

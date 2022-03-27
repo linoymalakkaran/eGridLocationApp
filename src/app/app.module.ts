@@ -7,6 +7,7 @@ import { LocationCardComponent } from './location-card/location-card.component';
 import { LocationFilterComponent } from './location-filter/location-filter.component';
 import { EGridDataService } from './services/egrid-data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LocationHeaderSearchComponent } from './location-header-search/location-header-search.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
     LocationMapComponent,
     LocationCardComponent,
     LocationFilterComponent,
+    LocationHeaderSearchComponent,
   ],
   imports: [BrowserModule, HttpClientModule],
   providers: [EGridDataService],
