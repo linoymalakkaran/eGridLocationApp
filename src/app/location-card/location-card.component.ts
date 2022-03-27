@@ -16,6 +16,6 @@ export class LocationCardComponent implements OnInit {
 
 
   mapMoveToPoint($event: MouseEvent) {
-    App.mapMoveToPoint($event);
+    App.mapMoveToPoint(this.locData);
   }
 }

@@ -66,17 +66,18 @@ App.triggerMarker = function (marker) {
 };
 
 App.mapMoveToPoint = function (locData) {
-  const points = App.globals.MapPoints;
+  //const points = App.globals.MapPoints;
+  const locationObj = App.globals.MapPoints.filter((loc) => {
+    return loc.SEQPLT20 === locData.SEQPLT20;
+  })[0];
   $("html, body").animate({ scrollTop: "0" }, 500, function () {
-    //App.globals.locationMap.setCenter(newPoint);
-    App.triggerMarker(points[0].marker);
+    App.triggerMarker(locationObj.marker);
   });
   $.blockUI({
     showOverlay: true,
     fadeIn: 200,
     timeout: 1000,
-    message:
-      "<h5> يرجى الانتظار </h5><h5>Please wait </h5><h5>برائے مہربانی انتظار کریں</h5>",
+    message: "<h5>Please wait while pointing to map location</h5>",
     centerY: 0,
     css: { top: "50px", left: ($(window).width() - 10) / 2 + "px" },
   });
