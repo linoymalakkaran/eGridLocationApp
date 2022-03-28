@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EGridDataService } from '../services/egrid-data.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-location-filter',
@@ -9,7 +10,10 @@ import { EGridDataService } from '../services/egrid-data.service';
 export class LocationFilterComponent implements OnInit {
   filterOptions: any[] = [];
 
-  constructor(private eGridDataService: EGridDataService) {}
+  constructor(
+    private eGridDataService: EGridDataService,
+    private spinner: NgxSpinnerService
+  ) {}
 
   ngOnInit(): void {
     this.filterOptions = [
@@ -19,6 +23,8 @@ export class LocationFilterComponent implements OnInit {
         matrix: 'matrix(1,0,0,1,13.5,13.5)',
         radius: '12.676190476190502',
         strokeWidth: '1.3333333333333333',
+        cx: 0,
+        cy: 0,
         label: '> 6,000',
         minVal: 6000,
         maxVal: 10000000000,
@@ -29,6 +35,8 @@ export class LocationFilterComponent implements OnInit {
         matrix: 'matrix(1,0,0,1,11,11)',
         radius: '10.09785088363442',
         strokeWidth: '1.3333333333333333',
+        cx: 2,
+        cy: 0,
         label: '3,000 - 6,000',
         minVal: 3000,
         maxVal: 6000,
@@ -39,6 +47,8 @@ export class LocationFilterComponent implements OnInit {
         matrix: 'matrix(1,0,0,1,9,9)',
         radius: '7.959924189972672',
         strokeWidth: '1.3333333333333333',
+        cx: 3,
+        cy: 0,
         label: '1,000 - 3,000',
         minVal: 1000,
         maxVal: 3000,
@@ -49,19 +59,30 @@ export class LocationFilterComponent implements OnInit {
         matrix: 'matrix(1,0,0,1,6.5,6.5)',
         radius: '5.821997496310918',
         strokeWidth: '1.3333333333333333',
+        cx: 6,
+        cy: 0,
         label: '< 1,000',
         minVal: 0,
         maxVal: 1000,
       },
     ];
+
+    this.eGridDataService.clearFilter$.subscribe((valChange) => {
+      this.clearFilterOptions();
+    });
   }
 
   resetMap() {
+    this.spinner.show();
     this.clearFilterOptions();
     this.eGridDataService.setTopNAnnualNetGenerationOfPowerPlants();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 1000);
   }
 
   selectFilter(filterOption: any) {
+    this.spinner.show();
     this.filterOptions.forEach((filter) => {
       filter.strokeWidth = '1.3333333333333333';
       if (filterOption.width === filter.width) {
@@ -69,6 +90,9 @@ export class LocationFilterComponent implements OnInit {
       }
     });
     this.eGridDataService.resetMapWithFilterOptions(filterOption);
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 1000);
   }
 
   clearFilterOptions() {

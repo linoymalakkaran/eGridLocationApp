@@ -6,27 +6,41 @@
   display: grid;
   grid-template:
     "img title" min-content
-    "img content" auto / 3fr 4.5fr;
+    "img content" auto/3fr 4fr;
   grid-column-gap: 1.5em;
-  box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+  box-shadow:0 0 5px rgb(0 0 0 / 22%);
   padding: 1.5em;
   margin-bottom: 1.5em;
+  border-radius: 10px;
+  background: #fff;
 }
 
 .card-img {
   grid-area: img;
-  color: #ab780a;
+  color: #3573a3;
   max-width: 100%;
+  background: #eee;
+  padding: 10px;
+
+  .card-map-link {
+    display: flex;
+    grid-gap: 5px;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
   a {
-    color: $yellow;
+    color: #3573a3;
+    font-weight: 400;
     font-size: 1.1em;
     text-decoration: none;
   }
   .data-val {
-    font-size: 1.1em;
-    font-style: italic;
-    color: $yellow;
+    font-size: 1rem;
+    color: #3678ab;
+    font-weight: 400;
   }
+
   .map-locator-img {
     cursor: pointer;
   }
@@ -35,7 +49,18 @@
 .card-title {
   grid-area: title;
   margin: 0;
-  font-weight: 300;
+  font-weight: 400;
+}
+
+.card-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 5px;
+  label {
+    font-size: small;
+  }
 }
 
 .card-content {
@@ -47,7 +72,7 @@
   }
   .data-val {
     font-size: 1.1em;
-    font-weight: bold;
-    color: #000;
+    font-weight: 400;
+    color: #222;
   }
 }

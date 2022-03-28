@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-img">
-    <div>
+    <div class="card-map-link">
       <img
         (click)="mapMoveToPoint($event)"
         src="assets/images/ico_map.png"
@@ -15,78 +15,86 @@
     <div>Longitude: {{ locData.LON }}</div>
     <div>No. units: {{ locData.NUMUNT }}</div>
     <hr />
-    <div>
-      Balancing Authority Code:
+    <div class="card-items">
+      <label>Balancing Authority Code:</label>
       <span class="data-val">{{ locData.BACODE }}</span>
     </div>
-    <div>
-      NERC region acronym: <span class="data-val">{{ locData.NERC }}</span>
+    <div class="card-items">
+      <label>NERC region acronym:</label>
+      <span class="data-val">{{ locData.NERC }}</span>
     </div>
-    <div>
-      eGRID subregion acronym:
+    <div class="card-items">
+      <label>eGRID subregion acronym:</label>
       <span class="data-val">{{ locData.SUBRGN }}</span>
     </div>
-    <div>
-      eGRID subregion name: <span class="data-val">{{ locData.SRNAME }}</span>
+    <div class="card-items">
+      <label>eGRID subregion name:</label>
+      <span class="data-val">{{ locData.SRNAME }}</span>
     </div>
-    <div>
-      Plant FIPS county code:
+    <div class="card-items">
+      <label>Plant FIPS county code:</label>
       <span class="data-val">{{ locData.FIPSCNTY }}</span>
     </div>
-    <div>
-      Number of generators: <span class="data-val">{{ locData.NUMGEN }}</span>
+    <div class="card-items">
+      <label>Number of generators:</label>
+      <span class="data-val">{{ locData.NUMGEN }}</span>
     </div>
-    <div>
-      Plant primary fuel: <span class="data-val">{{ locData.PLPRMFL }}</span>
-    </div>
-    <div>
-      Plant primary fuel category:
+    <div class="card-items">
+      <label>Plant primary fuel:</label>
       <span class="data-val">{{ locData.PLPRMFL }}</span>
     </div>
-    <div>
-      Plant annual net generation (MWh):
+    <div class="card-items">
+      <label>Plant primary fuel category:</label>
+      <span class="data-val">{{ locData.PLPRMFL }}</span>
+    </div>
+    <div class="card-items">
+      <label>Plant annual net generation (MWh):</label>
       <span class="data-val">{{ locData.PLNGENAN }}</span>
     </div>
   </div>
   <h2 class="card-title">{{ locData.PNAME }}</h2>
   <div class="card-content">
-    <div>
-      eGRID2020 Plant file sequence number:
+    <div class="card-items">
+      <label>eGRID2020 Plant file sequence number:</label>
       <span class="data-val">{{ locData.SEQPLT20 }}</span>
     </div>
-    <div>
-      Data Year: <span class="data-val">{{ locData.YEAR }}</span>
+    <div class="card-items">
+      <label>Data Year:</label> <span class="data-val">{{ locData.YEAR }}</span>
     </div>
-    <div>
-      Plant county name: <span class="data-val">{{ locData.CNTYNAME }}</span>
+    <div class="card-items">
+      <label>Plant county name:</label>
+      <span class="data-val">{{ locData.CNTYNAME }}</span>
     </div>
-    <div>
-      Plant state abbreviation:
+    <div class="card-items">
+      <label>Plant state abbreviation:</label>
       <span class="data-val">{{ locData.PSTATABB }}</span>
     </div>
-    <div>
-      DOE/EIA ORIS plant or facility code:
+    <div class="card-items">
+      <label>DOE/EIA ORIS plant or facility code:</label>
       <span class="data-val">{{ locData.ORISPL }}</span>
     </div>
-    <div>
-      Plant transmission or distribution system owner name:
+    <div class="card-items">
+      <label>Plant transmission or distribution system owner name:</label>
       <span class="data-val">{{ locData.OPRNAME }}</span>
     </div>
-    <div>
-      Plant transmission or distribution system owner ID:
+    <div class="card-items">
+      <label>Plant transmission or distribution system owner ID:</label>
       <span class="data-val">{{ locData.OPRCODE }}</span>
     </div>
-    <div>
-      Utility name: <span class="data-val">{{ locData.UTLSRVNM }}</span>
+    <div class="card-items">
+      <label>Utility name:</label>
+      <span class="data-val">{{ locData.UTLSRVNM }}</span>
     </div>
-    <div>
-      Utility ID: <span class="data-val">{{ locData.UTLSRVID }}</span>
+    <div class="card-items">
+      <label>Utility ID:</label>
+      <span class="data-val">{{ locData.UTLSRVID }}</span>
     </div>
-    <div>
-      Plant-level sector: <span class="data-val">{{ locData.SECTOR }}</span>
+    <div class="card-items">
+      <label>Plant-level sector:</label>
+      <span class="data-val">{{ locData.SECTOR }}</span>
     </div>
-    <div>
-      Balancing Authority Name:
+    <div class="card-items">
+      <label>Balancing Authority Name:</label>
       <span class="data-val">{{ locData.BANAME }}</span>
     </div>
   </div>

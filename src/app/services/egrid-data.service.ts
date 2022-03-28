@@ -17,6 +17,9 @@ export class EGridDataService {
   powerPlantsUIList$: BehaviorSubject<IEgridModel[]> = new BehaviorSubject<
     IEgridModel[]
   >([]);
+  public clearFilter$: BehaviorSubject<string> = new BehaviorSubject(
+    new Date().toString()
+  );
 
   constructor(private httpClient: HttpClient) {}
 
@@ -34,6 +37,8 @@ export class EGridDataService {
             item.PLNGENAN = item.PLNGENAN.replaceAll('(', '')
               .replaceAll(')', '')
               .replaceAll(',', '');
+            item.LAT = parseFloat(item.LAT.toString());
+            item.LON = parseFloat(item.LON.toString());
             modifiedData.push(item);
           });
           this.eGridData = modifiedData;
@@ -60,6 +65,9 @@ export class EGridDataService {
   }
 
   initializeGoogleMap(markers: any) {
+    if (markers?.length === 0) {
+      return;
+    }
     App.globals.MapPoints = markers;
     var latlng = new google.maps.LatLng(markers[0].LAT, markers[0].LON); // default location
     var myOptions = {

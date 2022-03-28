@@ -11,29 +11,31 @@
         class="filter-option-item"
         *ngFor="let option of filterOptions"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          [attr.width]="option.width"
-          [attr.height]="option.height"
-          style="display: block"
-        >
-          <defs></defs>
-          <g [attr.transform]="option.matrix">
-            <circle
-              fill="rgba(255, 255, 255, 1)"
-              fill-rule="evenodd"
-              stroke="rgba(43, 43, 43, 1)"
-              [attr.stroke-width]="option.strokeWidth"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-dasharray="none"
-              stroke-miterlimit="4"
-              cx="0"
-              cy="0"
-              [attr.r]="option.radius"
-            ></circle>
-          </g>
-        </svg>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            [attr.width]="option.width"
+            [attr.height]="option.height"
+            style="display: block"
+          >
+            <defs></defs>
+            <g [attr.transform]="option.matrix">
+              <circle
+                fill="rgba(255, 255, 255, 1)"
+                fill-rule="evenodd"
+                stroke="rgba(43, 43, 43, 1)"
+                [attr.stroke-width]="option.strokeWidth"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-dasharray="none"
+                stroke-miterlimit="4"
+                [attr.cx]="option.cx"
+                [attr.cy]="option.cy"
+                [attr.r]="option.radius"
+              ></circle>
+            </g>
+          </svg>
+        </div>
         <label>{{ option.label }}</label>
       </div>
     </div>

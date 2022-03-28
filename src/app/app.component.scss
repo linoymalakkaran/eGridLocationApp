@@ -10,8 +10,8 @@ header {
 header,
 footer {
   position: relative;
-  background: $black;
-  color: $yellow;
+  background: #3573a3;
+  color: #e9d20f;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,6 +38,7 @@ app-location-map {
 
 main {
   grid-area: main;
+  padding: 0 1rem;
 }
 
 .app-location-card-main {

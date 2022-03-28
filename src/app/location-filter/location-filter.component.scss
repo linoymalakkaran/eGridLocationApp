@@ -1,8 +1,9 @@
 .filter-container {
   display: flex;
   flex-direction: column;
+
   .button-reset {
-    background-color: #aadaff;
+    background-color: #3573a3;
     border-color: #e8e8e8;
     color: #0c0202;
     padding: 10px 23px;
@@ -17,18 +18,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height:48px;
   }
 
   .filter-option-area {
     display: flex;
     flex-direction: column;
+    padding: 15px;
 
     .filter-title {
       font-weight: bold;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #e4bf6e;
+      align-items: flex-start;
+      justify-content: flex-start;
+      color: #3573a3;
     }
 
     .filter-text-desc {
@@ -47,7 +50,21 @@
 
       .filter-option-item {
         display: flex;
-        gap: 8px;
+        flex-direction: row;
+        align-items:center center;
+        justify-content: center;
+        white-space: nowrap;
+        text-align: center;
+        > div{
+          max-width: 32px;
+        }
+
+        svg{
+          width:30px !important;
+          margin: 0 auto;
+        }
+
+
       }
     }
   }

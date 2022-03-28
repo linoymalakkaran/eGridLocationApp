@@ -4,6 +4,7 @@ import { IScriptsModel } from './models/IScripts-model';
 import { EGridDataService } from './services/egrid-data.service';
 import { ScriptLoaderService } from './services/script-loader.service';
 import * as $ from 'jquery';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-root',
@@ -30,10 +31,12 @@ export class AppComponent implements OnInit {
 
   constructor(
     private eGridDataService: EGridDataService,
-    public scriptLoaderService: ScriptLoaderService
+    public scriptLoaderService: ScriptLoaderService,
+    private spinner: NgxSpinnerService
   ) {}
 
   ngOnInit(): void {
+    this.spinner.show();
     this.scriptLoaderService.load(this.iacScriptsModel).then((scriptLoaded) => {
       this.iacScriptsModel.forEach((scriptObj) => {
         scriptObj.loaded = true;
@@ -51,6 +54,9 @@ export class AppComponent implements OnInit {
       next: (locationData: IEgridModel[]) => {
         this.eGridData = locationData;
         this.eGridDataService.setTopNAnnualNetGenerationOfPowerPlants();
+        setTimeout(() => {
+          this.spinner.hide();
+        }, 1000);
       },
       error: (e) => console.error(e),
     });

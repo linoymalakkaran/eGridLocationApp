@@ -44,7 +44,7 @@ App.createMarkers = function () {
   }
 
   App.globals.locationMap.setCenter(
-    new google.maps.LatLng(points[0].gps_lat, points[0].gps_long)
+    new google.maps.LatLng(points[0].LAT, points[0].LON)
   );
 };
 

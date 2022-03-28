@@ -1,6 +1,6 @@
 export interface IEgridModel {
-  SEQPLT20?: string;
-  YEAR?: string;
+  SEQPLT20: string;
+  YEAR: string;
   PSTATABB?: string;
   PNAME: string;
   ORISPL?: string;
@@ -16,8 +16,8 @@ export interface IEgridModel {
   SRNAME?: string;
   FIPSCNTY?: string;
   CNTYNAME?: string;
-  LAT?: string;
-  LON?: string;
+  LAT: number;
+  LON: number;
   NUMUNT?: string;
   NUMGEN?: string;
   PLPRMFL?: string;
