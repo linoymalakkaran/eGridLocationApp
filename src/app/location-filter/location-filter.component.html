@@ -1,12 +1,41 @@
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean posuere
-  semper urna, ut pellentesque sem fermentum vel. Mauris luctus quis lectus
-  nec luctus. Donec ut diam et neque eleifend varius sed quis erat. In tempor
-  pharetra felis at fermentum. Maecenas iaculis neque orci, sit amet sodales
-  quam venenatis sit amet. Praesent eu enim nec velit bibendum accumsan a sed
-  tellus. Aenean sed justo a tortor hendrerit imperdiet efficitur nec risus.
-  Morbi gravida mi quis ultrices elementum. Pellentesque fermentum sodales
-  sagittis. Sed vel efficitur nisl. Ut congue sodales sapien. Duis ultricies
-  felis nunc, eu semper est tincidunt eu. Curabitur faucibus luctus eros, eget
-  semper mauris dictum vel.
-</p>
+<div class="filter-container">
+  <button (click)="resetMap()" class="button-reset">Reset Map</button>
+  <div class="filter-option-area">
+    <h1 class="filter-title">Filter</h1>
+    <div class="filter-text-desc">
+      Plant annual net generation (MWh) (Limited to 100 results)
+    </div>
+    <div class="filter-option-block">
+      <div
+        (click)="selectFilter(option)"
+        class="filter-option-item"
+        *ngFor="let option of filterOptions"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          [attr.width]="option.width"
+          [attr.height]="option.height"
+          style="display: block"
+        >
+          <defs></defs>
+          <g [attr.transform]="option.matrix">
+            <circle
+              fill="rgba(255, 255, 255, 1)"
+              fill-rule="evenodd"
+              stroke="rgba(43, 43, 43, 1)"
+              [attr.stroke-width]="option.strokeWidth"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-dasharray="none"
+              stroke-miterlimit="4"
+              cx="0"
+              cy="0"
+              [attr.r]="option.radius"
+            ></circle>
+          </g>
+        </svg>
+        <label>{{ option.label }}</label>
+      </div>
+    </div>
+  </div>
+</div>

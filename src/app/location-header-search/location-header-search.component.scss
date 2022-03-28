@@ -14,7 +14,7 @@
 
 .content {
   background: #aadaff;
-  width: 55vw;
+  width: 60vw;;
   // padding: 3em;
   box-shadow: 0 0 3em rgba(0, 0, 0, 0.15);
   position: relative;
@@ -23,13 +23,9 @@
 .example-text {
   background: white;
   width: 20vw;
-}
-
-.reset-map {
-  background: white;
-  width: 4vw;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .search {

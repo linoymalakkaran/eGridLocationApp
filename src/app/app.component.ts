@@ -40,42 +40,19 @@ export class AppComponent implements OnInit {
       });
       this.getLocationData();
     });
+
+    this.eGridDataService.powerPlantsUIList$.subscribe((topTenPowerPlants) => {
+      this.topTenPowerPlants = topTenPowerPlants;
+    });
   }
 
   getLocationData() {
     this.eGridDataService.getLocationData().subscribe({
       next: (locationData: IEgridModel[]) => {
         this.eGridData = locationData;
-        this.setTopTenAnnualNetGenerationOfPowerPlants();
+        this.eGridDataService.setTopNAnnualNetGenerationOfPowerPlants();
       },
       error: (e) => console.error(e),
     });
-  }
-
-  setTopTenAnnualNetGenerationOfPowerPlants() {
-    this.topTenPowerPlants = [...this.eGridData]
-      .sort((itemA, itemB) => {
-        return parseFloat(itemA.PLNGENAN) - parseFloat(itemB.PLNGENAN);
-      })
-      .slice(0, 10);
-    this.initializeGoogleMap(this.topTenPowerPlants);
-  }
-
-  initializeGoogleMap(markers: any) {
-    App.globals.MapPoints = markers;
-    var latlng = new google.maps.LatLng(62.6833, -164.6544); // default location
-    var myOptions = {
-      zoom: 11,
-      center: latlng,
-      disableDefaultUI: true,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-    };
-    App.globals.locationMap = new google.maps.Map(
-      document.getElementById('map_canvas'),
-      myOptions
-    );
-    App.createMarkers();
-    App.globals.locationMap.setCenter(latlng);
-    App.globals.locationMap.setZoom(3);
   }
 }

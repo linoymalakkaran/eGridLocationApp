@@ -8,6 +8,7 @@ import { LocationFilterComponent } from './location-filter/location-filter.compo
 import { EGridDataService } from './services/egrid-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LocationHeaderSearchComponent } from './location-header-search/location-header-search.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { LocationHeaderSearchComponent } from './location-header-search/location
     LocationFilterComponent,
     LocationHeaderSearchComponent,
   ],
-  imports: [BrowserModule, HttpClientModule],
+  imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [EGridDataService],
   bootstrap: [AppComponent],
 })
