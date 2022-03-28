@@ -1,0 +1,38 @@
+<div class="location-table-container">
+  <table class="location-table">
+    <tr>
+      <th>PLANT NAME</th>
+      <th>DATA YEAR</th>
+      <th>LATITUDE</th>
+      <th>LONGITUDE</th>
+      <th>NO. UNITS</th>
+      <th>COUNTY NAME</th>
+      <th>PRIMARY FUEL</th>
+      <th>PRIMARY FUEL CATEGORY</th>
+      <th>ANNUAL NET GENERATION (MWh)</th>
+    </tr>
+    <tr *ngFor="let locData of locDataList">
+      <td>
+        <div class="card-map-link">
+          <img
+            (click)="mapMoveToPoint(locData)"
+            src="assets/images/ico_map.png"
+            class="map-locator-img"
+            alt="Move to location"
+          />
+          <a href="javascript:void(0)" (click)="mapMoveToPoint(locData)">
+            <span class="data-val"> {{ locData.PNAME }}</span></a
+          >
+        </div>
+      </td>
+      <td>{{ locData.YEAR }}</td>
+      <td>{{ locData.LAT }}</td>
+      <td>{{ locData.LON }}</td>
+      <td>{{ locData.NUMUNT }}</td>
+      <td>{{ locData.CNTYNAME }}</td>
+      <td>{{ locData.PLPRMFL }}</td>
+      <td>{{ locData.PLPRMFL }}</td>
+      <td>{{ locData.PLNGENAN }}</td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,65 @@
+@import "../../scss/variables.scss";
+@import "../../scss/mixins.scss";
+
+.location-table-container {
+  width: 100%;
+  height: 33vh;
+  overflow: auto;
+
+  table {
+    position: relative;
+  }
+
+  th {
+    position: sticky;
+    top: 0;
+  }
+}
+
+.location-table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.location-table td,
+.location-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.location-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.location-table tr:hover {
+  background-color: #ddd;
+}
+
+.location-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: $clr-primary;
+  color: white;
+  font-size: 13px;
+}
+
+.card-map-link {
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+
+  a {
+    color: #3573a3;
+    font-weight: 400;
+    font-size: 1.1em;
+    text-decoration: none;
+
+    .data-val {
+      font-size: 1rem;
+      color: #3678ab;
+      font-weight: 400;
+    }
+  }
+}

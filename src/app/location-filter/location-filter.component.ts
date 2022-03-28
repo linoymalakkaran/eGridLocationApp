@@ -23,6 +23,7 @@ export class LocationFilterComponent implements OnInit {
         matrix: 'matrix(1,0,0,1,13.5,13.5)',
         radius: '12.676190476190502',
         strokeWidth: '1.3333333333333333',
+        fill: 'white',
         cx: 0,
         cy: 0,
         label: '> 6,000',
@@ -35,6 +36,7 @@ export class LocationFilterComponent implements OnInit {
         matrix: 'matrix(1,0,0,1,11,11)',
         radius: '10.09785088363442',
         strokeWidth: '1.3333333333333333',
+        fill: 'white',
         cx: 2,
         cy: 0,
         label: '3,000 - 6,000',
@@ -47,6 +49,7 @@ export class LocationFilterComponent implements OnInit {
         matrix: 'matrix(1,0,0,1,9,9)',
         radius: '7.959924189972672',
         strokeWidth: '1.3333333333333333',
+        fill: 'white',
         cx: 3,
         cy: 0,
         label: '1,000 - 3,000',
@@ -59,6 +62,7 @@ export class LocationFilterComponent implements OnInit {
         matrix: 'matrix(1,0,0,1,6.5,6.5)',
         radius: '5.821997496310918',
         strokeWidth: '1.3333333333333333',
+        fill: 'white',
         cx: 6,
         cy: 0,
         label: '< 1,000',
@@ -84,9 +88,9 @@ export class LocationFilterComponent implements OnInit {
   selectFilter(filterOption: any) {
     this.spinner.show();
     this.filterOptions.forEach((filter) => {
-      filter.strokeWidth = '1.3333333333333333';
+      filter.fill = 'white';
       if (filterOption.width === filter.width) {
-        filter.strokeWidth = filterOption.width;
+        filter.fill = '#3573a3';
       }
     });
     this.eGridDataService.resetMapWithFilterOptions(filterOption);
@@ -97,7 +101,7 @@ export class LocationFilterComponent implements OnInit {
 
   clearFilterOptions() {
     this.filterOptions.forEach((filter) => {
-      filter.strokeWidth = '1.3333333333333333';
+      filter.fill = 'white';
     });
   }
 }

@@ -12,6 +12,7 @@ import { LocationHeaderSearchComponent } from './location-header-search/location
 import { FormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
+import { LocationTableViewComponent } from './location-table-view/location-table-view.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ToastrModule } from 'ngx-toastr';
     LocationCardComponent,
     LocationFilterComponent,
     LocationHeaderSearchComponent,
+    LocationTableViewComponent,
   ],
   imports: [
     BrowserModule,

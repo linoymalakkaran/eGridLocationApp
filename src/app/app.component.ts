@@ -12,7 +12,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  public eGridData: IEgridModel[] = [];
+  eGridData: IEgridModel[] = [];
+  isCardView: boolean = true;
   iacScriptsModel: IScriptsModel[] = [
     {
       name: 'locations',
@@ -47,6 +48,10 @@ export class AppComponent implements OnInit {
     this.eGridDataService.powerPlantsUIList$.subscribe((topTenPowerPlants) => {
       this.topTenPowerPlants = topTenPowerPlants;
     });
+  }
+
+  onToggleView() {
+    this.isCardView = !this.isCardView;
   }
 
   getLocationData() {

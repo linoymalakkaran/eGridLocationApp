@@ -56,7 +56,7 @@ export class EGridDataService {
   ): IEgridModel[] {
     this.topTenPowerPlants = [...this.eGridData]
       .sort((itemA, itemB) => {
-        return parseFloat(itemA.PLNGENAN) - parseFloat(itemB.PLNGENAN);
+        return parseFloat(itemB.PLNGENAN) - parseFloat(itemA.PLNGENAN);
       })
       .slice(0, numberOfPlants);
     this.initializeGoogleMap(this.topTenPowerPlants);

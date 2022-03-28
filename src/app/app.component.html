@@ -8,11 +8,23 @@
 </div>
 
 <main>
-  <h1>Top 10 annual net generation of power plants.</h1>
-  <div class="app-location-card-main">
+  <div class="swich-view-container">
+    <h1 class="heading-text">Top 10 annual net generation of power plants.</h1>
+    <div class="swich-view-icons" (click)="onToggleView()">
+      <span class="switch-view-text">SWITCH VIEW</span>
+      <i *ngIf="!isCardView" class="fa fa-table" aria-hidden="true"></i>
+      <i *ngIf="isCardView" class="fa fa-id-card" aria-hidden="true"></i>
+    </div>
+  </div>
+  <div *ngIf="isCardView" class="app-location-card-main">
     <ng-container *ngFor="let locData of topTenPowerPlants">
       <app-location-card [locData]="locData"></app-location-card>
     </ng-container>
+  </div>
+  <div *ngIf="!isCardView" class="app-location-table-main">
+    <app-location-table-view
+      [locDataList]="topTenPowerPlants"
+    ></app-location-table-view>
   </div>
 </main>
 

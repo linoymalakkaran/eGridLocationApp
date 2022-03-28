@@ -10,15 +10,41 @@ header {
 header,
 footer {
   position: relative;
-  background: #3573a3;
-  color: #e9d20f;
+  background: $clr-primary;
+  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.heading-text {
+  text-transform: uppercase;
+  color: $clr-primary;
+  font-weight: 300;
+  font-size: 1.1em;
+}
+
+.swich-view-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .swich-view-icons {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .switch-view-text {
+      font-size: 0.7em;
+      font-weight: 500;
+      color: #3573a3;
+      margin-right: 3px;
+    }
+  }
+}
+
 .footer-title {
-  @include font-alt($color: $yellow, $font-size: $fs-base-2);
+  @include font-alt($color: $white, $font-size: $fs-base-2);
 }
 
 .map-area {
@@ -45,6 +71,12 @@ main {
   display: grid;
   // grid-template-columns: 1fr 1fr 1fr;
   grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
+  grid-column-gap: 1.5em;
+}
+
+.app-location-table-main {
+  display: grid;
+  grid-template-columns: 1fr;
   grid-column-gap: 1.5em;
 }
 
