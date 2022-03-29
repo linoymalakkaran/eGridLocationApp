@@ -9,7 +9,9 @@
 
 <main>
   <div class="swich-view-container">
-    <h1 class="heading-text">Top 10 annual net generation of power plants.</h1>
+    <h1 class="heading-text">
+      Top {{ topTenPowerPlants.length }} annual net generation of power plants.
+    </h1>
     <div class="swich-view-icons" (click)="onToggleView()">
       <span class="switch-view-text">SWITCH VIEW</span>
       <i *ngIf="!isCardView" class="fa fa-table" aria-hidden="true"></i>

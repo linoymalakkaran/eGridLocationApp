@@ -13,17 +13,17 @@ App.createMarkers = function () {
       map: App.globals.locationMap,
     });
 
-    let infodata = "<div style='width: 235px; padding:5px 12px;'>";
+    let infodata = "<div style='width: 300px; padding:5px 12px;'>";
     infodata = infodata + "<b> " + pt.PNAME + "</b> <br /> ";
-    infodata = infodata + "county name: " + pt.CNTYNAME + "<br />";
+    infodata = infodata + "County Name: " + pt.CNTYNAME + "<br />";
     infodata =
-      infodata + " Plant annual net generation: " + pt.PLNGENAN + "<br />";
+      infodata + " Plant Annual Net Generation: " + pt.PLNGENAN + "<br />";
     infodata =
       infodata +
-      " YEAR: " +
+      " Year: " +
       pt.YEAR +
       "<br />" +
-      "Plant-level sector: " +
+      "Plant-level Sector: " +
       pt.SECTOR +
       "<br />" +
       "GPS: " +

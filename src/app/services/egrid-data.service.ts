@@ -87,7 +87,7 @@ export class EGridDataService {
 
   getLocationDataByPlantName(plantName: string): IEgridModel | null {
     const matchingData = this.eGridData.filter((item) =>
-      item.PNAME.includes(plantName)
+      item.PNAME.toLowerCase().startsWith(plantName.toLowerCase())
     );
     const isDataFound = matchingData && matchingData.length > 0;
     if (isDataFound) {

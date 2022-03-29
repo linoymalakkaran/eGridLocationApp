@@ -8,7 +8,7 @@
     "img title" min-content
     "img content" auto/3fr 4fr;
   grid-column-gap: 1.5em;
-  box-shadow:0 0 5px rgb(0 0 0 / 22%);
+  box-shadow: 0 0 5px rgb(0 0 0 / 22%);
   padding: 1.5em;
   margin-bottom: 1.5em;
   border-radius: 10px;
@@ -50,6 +50,17 @@
   grid-area: title;
   margin: 0;
   font-weight: 400;
+  margin-bottom: 3px;
+
+  .card-title-inner-container {
+    display: flex;
+    flex-direction: column;
+    color: #3573a3;
+
+    .plant-name-placeholder {
+      font-size: 7px;
+    }
+  }
 }
 
 .card-items {
